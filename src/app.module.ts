@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ChatGateway } from './chat/chat.gateway';
-import { UsersModule } from './users/users.module';
-import { ChatModule } from './chat/chat.module';
+import { UsersModule } from './components/users/users.module';
+import { ChatModule } from './components/chat/chat.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER } from './config/db.config';
+import { MessagesModule } from './components/messages/messages.module';
+import { UsersChatModule } from './components/users-chat/users-chat.module';
+import { UserSettingsModule } from './components/user-settings/user-settings.module';
 
 @Module({
   imports: [
@@ -19,8 +19,13 @@ import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER } from './config/db.config';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true
     }),
-    UsersModule, ChatModule, ChatGateway],
-  controllers: [AppController],
-  providers: [AppService, ChatGateway],
+    UsersModule, 
+    ChatModule, 
+    MessagesModule, 
+    UsersChatModule, 
+    UserSettingsModule,
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
