@@ -20,7 +20,7 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
   }
   handleConnection(client: Socket) {
     const userId = this.getUserId(client);
-    this.activeUsers.set(userId, client)
+    this.activeUsers.set(userId, client);
   }
 
   @SubscribeMessage('message')

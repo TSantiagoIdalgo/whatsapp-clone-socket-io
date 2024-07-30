@@ -3,13 +3,13 @@ import { CreateUserSettingDto } from './dto/create-user-setting.dto';
 import { UpdateUserSettingDto } from './dto/update-user-setting.dto';
 
 @Injectable()
-export class UserSettingsService {
+export class UserSettingService {
   create(createUserSettingDto: CreateUserSettingDto) {
     return 'This action adds a new userSetting';
   }
 
   findAll() {
-    return `This action returns all userSettings`;
+    return `This action returns all userSetting`;
   }
 
   findOne(id: number) {

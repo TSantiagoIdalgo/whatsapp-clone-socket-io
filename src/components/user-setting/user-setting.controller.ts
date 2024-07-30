@@ -1,34 +1,34 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { UserSettingsService } from './user-settings.service';
+import { UserSettingService } from './user-setting.service';
 import { CreateUserSettingDto } from './dto/create-user-setting.dto';
 import { UpdateUserSettingDto } from './dto/update-user-setting.dto';
 
-@Controller('user-settings')
-export class UserSettingsController {
-  constructor(private readonly userSettingsService: UserSettingsService) {}
+@Controller('user-setting')
+export class UserSettingController {
+  constructor(private readonly userSettingService: UserSettingService) {}
 
   @Post()
   create(@Body() createUserSettingDto: CreateUserSettingDto) {
-    return this.userSettingsService.create(createUserSettingDto);
+    return this.userSettingService.create(createUserSettingDto);
   }
 
   @Get()
   findAll() {
-    return this.userSettingsService.findAll();
+    return this.userSettingService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.userSettingsService.findOne(+id);
+    return this.userSettingService.findOne(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserSettingDto: UpdateUserSettingDto) {
-    return this.userSettingsService.update(+id, updateUserSettingDto);
+    return this.userSettingService.update(+id, updateUserSettingDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.userSettingsService.remove(+id);
+    return this.userSettingService.remove(+id);
   }
 }

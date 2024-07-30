@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER } from './config/db.config';
 import { MessagesModule } from './components/messages/messages.module';
 import { UsersChatModule } from './components/users-chat/users-chat.module';
-import { UserSettingsModule } from './components/user-settings/user-settings.module';
+import { UserSettingModule } from './components/user-setting/user-setting.module';
 
 @Module({
   imports: [
@@ -23,7 +23,7 @@ import { UserSettingsModule } from './components/user-settings/user-settings.mod
     ChatModule, 
     MessagesModule, 
     UsersChatModule, 
-    UserSettingsModule,
+    UserSettingModule,
   ],
   controllers: [],
   providers: [],
