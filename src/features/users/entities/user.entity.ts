@@ -12,6 +12,8 @@ export class User {
     email: string;
   @Column('varchar', { nullable: false, length: 150 })
     password: string;
+  @Column('boolean', { default: false })
+    verify: boolean
 
   
   @OneToOne(() => UserSetting)
@@ -26,5 +28,5 @@ export class User {
 
 
   @OneToMany(() => UserChat, userChat => userChat.user)
-    usersChats: UserChat
+    usersChats: UserChat[]
 }

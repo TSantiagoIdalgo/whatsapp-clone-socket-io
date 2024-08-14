@@ -2,7 +2,7 @@ import { IsEmail, IsString, MinLength } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger";
 import { User } from "../entities/user.entity";
 
-export class CreateUserDto implements Partial<User> {
+export class LoginUserDto implements Partial<User> {
     @ApiProperty({ description: 'The user`s email address that will be used as userId' })
     @IsString()
     @IsEmail()
@@ -13,8 +13,6 @@ export class CreateUserDto implements Partial<User> {
     @IsString()
       password: string;
 
-    @ApiProperty({ description: 'Users name'})
-    @IsString()
-    @MinLength(4)
-      username: string;
+    @ApiProperty({ description: 'Property that verifies if the user is correctly registered' })
+      verify?: boolean;
 }

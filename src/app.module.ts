@@ -24,7 +24,8 @@ import { UserSettingsModule } from './features/user-settings/user-settings.modul
     ChatsModule, 
     UserChatsModule, 
     MessagesModule, 
-    CallsModule, UserSettingsModule
+    CallsModule, 
+    UserSettingsModule
   ],
   controllers: [],
   providers: [],
